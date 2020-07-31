@@ -32,7 +32,7 @@
                 :value="item.value">
               </el-option>
             </el-select>
-            <el-input v-else size="small" v-model="props.row[props.column.field]"/>
+            <el-input size="small" v-model="props.row[props.column.field]"/>
           </div>
 
           <div v-else>
@@ -45,7 +45,11 @@
     </vue-good-table>
     <br><br>
     <h2>Vue.js Editable Table</h2><br>
-    <secTable />
+    <secTable /><br><br>
+
+    <el-button type="primary" @click="viewFaker()">ViewFakerTableData</el-button>
+
+    
   </div>
 </template>
 
@@ -139,6 +143,9 @@ export default {
       console.log('updatedata', data)
       this.editId = ''
     },
+    viewFaker(){
+        this.$router.replace({name:"fakerTable"})
+    }
   }
 };
 </script>

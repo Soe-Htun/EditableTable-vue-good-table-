@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import EditableTable from '../views/EditableTable.vue'
-
+import fakerTable from '../views/viewFakerTable.vue'
 Vue.use(VueRouter)
 
   const routes = [
@@ -10,6 +10,11 @@ Vue.use(VueRouter)
     name: 'EditableTable',
     component: EditableTable
   },
+  {
+    path:'fakerEditTable',
+    name: 'fakerTable',
+    component: fakerTable
+  }
  
 ]
 

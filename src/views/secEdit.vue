@@ -8,8 +8,8 @@
 
             <template slot="table-row" slot-scope="props">
                 <div v-if="props.column.field == 'btn'">
-                    <el-button size="mini" type="primary" @click="editRow(props.row.id)">Edit</el-button>
-                    <el-button size="mini" type="success" v-if="props.row.id" props.row.id=editId @click="Save(props.row)">Save</el-button>     
+                    <el-button size="mini" type="primary" props.row.id=editId @click="editRow(props.row.id)">Edit</el-button>
+                    <el-button size="mini" type="success"   @click="Save(props.row)">Save</el-button>     
                 </div>
 
                 <div v-else>
