@@ -12,15 +12,14 @@
       }">
 
       <template slot="table-row" slot-scope="props">
-
         <div v-if="props.column.field == 'btn'" style="width: 10px">
           <el-button  v-if="props.row.id == editId" type="success" size="mini" @click="okRow(props.row)">Save</el-button>
           <el-button v-else type="primary" size="mini" @click="editRow(props.row.id)">Edit</el-button>
         </div>
 
-        <div v-else-if="props.column.html" v-html="props.row[props.column.field]">
+        <!-- <div v-else-if="props.column.html" v-html="props.row[props.column.field]">
         
-        </div>
+        </div> -->
 
         <div v-else>
           <div v-if="props.row.id == editId">           
@@ -44,13 +43,20 @@
       </template>
       
     </vue-good-table>
-
+    <br><br>
+    <h2>Vue.js Editable Table</h2><br>
+    <secTable />
   </div>
 </template>
 
 <script>
+import secTable from './secEdit'
 export default {
   name: 'vueGood',
+  components:{
+      secTable
+  },
+
   data(){
     return {
       options: [{
@@ -82,12 +88,12 @@ export default {
           width: '100px',
           tdClass: this.tdClassFunc
         },
-        {
-          label: 'HTML',
-          field: 'ht',
-          width: '200px',
-          html: true
-        },        
+        // {
+        //   label: 'HTML',
+        //   field: 'ht',
+        //   width: '200px',
+        //   html: true
+        // },        
         {
           label: 'Date',
           field: 'createdAt',
@@ -102,7 +108,8 @@ export default {
         },
       ],
       rows: [
-        { id:1, ht:"<span style='color: green;'>HTML element</span>", name:"John", age: 20, createdAt: '', score: 'Option1' },
+        // { id:1, ht:"<span style='color: green;'>HTML element</span>", name:"John", age: 20, createdAt: '', score: 'Option1' },
+        { id:1, name:"John", age: 20, createdAt: '2011-10-31', score: 'Option1' },
         { id:2, name:"Jane", age: 24, createdAt: '2011-10-31', score: 'Option1' },
         { id:3, name:"Susan", age: 16, createdAt: '2011-10-30', score: 'Option1' },
         { id:4, name:"Chris", age: 55, createdAt: '2011-10-11', score: 'Option3' },
