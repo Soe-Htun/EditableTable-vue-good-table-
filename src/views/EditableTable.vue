@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="Edit">
     <vue-good-table
       :columns="columns"
       :rows="rows"

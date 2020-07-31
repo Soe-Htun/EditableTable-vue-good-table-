@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import EditableCell from '../views/EditableCell.vue'
+import EditableTable from '../views/EditableTable.vue'
 
 Vue.use(VueRouter)
 
   const routes = [
   {
     path: '/',
-    name: 'EditableCell',
-    component: EditableCell
+    name: 'EditableTable',
+    component: EditableTable
   },
  
 ]
