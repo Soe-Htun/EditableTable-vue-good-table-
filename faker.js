@@ -5,7 +5,7 @@ function GenerateEmployess(){
         var firstName =faker.name.firstName();
         var lastName = faker.name.lastName();
         var city = faker.address.city();
-        var date =faker.date.month();
+        var date =faker.date.recent();
         var phone_no = faker.phone.phoneNumber();
         fakerEditTable.push({
             "id" : id,

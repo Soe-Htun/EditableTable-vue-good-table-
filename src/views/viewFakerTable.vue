@@ -7,14 +7,14 @@
         >
             <template slot="table-row" slot-scope="props">
                 <div v-if="props.column.field == 'btn'">
-                    <el-button type="primary" props.row.id=editId @click="editRow(props.row.id)">Edit</el-button>
-                    <el-button type="success"  @click="Save(props.row)"> Save</el-button>
+                    <el-button size="mini" type="primary" props.row.id=editId @click="editRow(props.row.id)">Edit</el-button>
+                    <el-button size="mini" type="success"  @click="Save(props.row)"> Save</el-button>
                 </div>
 
                 <div v-else>
                     <div v-if="props.row.id == editId">
-                        <el-date-picker v-if="props.column.custom =='Date'" v-model="props.row[props.column.field]"  placeholder=""></el-date-picker>
-                        <el-input v-else size="small" v-model="props.row[props.column.field]"/>
+                        <el-date-picker v-model="props.row[props.column.field]" v-if="props.column.custom =='Date'" placeholder=""></el-date-picker>
+                        <el-input v-else size="small" v-model="props.row[props.column.field]"></el-input>
                     </div>
                     <div v-else>{{props.row[props.column.field]}}</div>
                 </div>
@@ -59,7 +59,7 @@ export default {
                     field: 'Date',
                     width: '100px',
                     custom: 'Date',
-                    type:Date
+                    type:   Date
                 },
                 {
                     label: 'Phone_no',
@@ -75,7 +75,7 @@ export default {
        editRow(id){
            this.editId= id;
        },
-       save(data){
+       Save(data){
            console.log(data);
            this.editId=''
        },
