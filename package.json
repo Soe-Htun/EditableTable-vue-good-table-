@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "startFaker" : "json-server faker.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
@@ -11,6 +12,7 @@
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
     "element-ui": "^2.13.2",
+    "express": "^4.17.1",
     "faker": "^4.1.0",
     "json-server": "^0.16.1",
     "vue": "^2.6.11",
@@ -26,5 +28,17 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "description": "## Project setup ``` npm install ```",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Soe-Htun/EditableTable-vue-good-table-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Soe-Htun/EditableTable-vue-good-table-/issues"
+  },
+  "homepage": "https://github.com/Soe-Htun/EditableTable-vue-good-table-#readme"
 }

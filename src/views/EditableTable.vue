@@ -8,7 +8,7 @@
       :pagination-options="{
         enabled: true,
         mode: 'pages',
-        perPageDropdown: [5, 10, 15]
+        perPageDropdown: [3,5, 10, 15]
       }">
 
       <template slot="table-row" slot-scope="props">
@@ -32,7 +32,7 @@
                 :value="item.value">
               </el-option>
             </el-select>
-            <el-input size="small" v-model="props.row[props.column.field]"/>
+            <el-input v-else size="small" v-model="props.row[props.column.field]"/>
           </div>
 
           <div v-else>
@@ -43,13 +43,9 @@
       </template>
       
     </vue-good-table>
-    <br><br>
-    <h2>Vue.js Editable Table</h2><br>
-    <secTable /><br><br>
-
+    <h2>Vue.js Editable Table</h2>
+    <secTable /><br>
     <el-button type="primary" @click="viewFaker()">ViewFakerTableData</el-button>
-
-    
   </div>
 </template>
 
@@ -122,7 +118,8 @@ export default {
       ],
       edit: false,
       old: {},
-      editId: ''
+      editId: '',
+      dateRes:''
     };
   },
   methods: {
@@ -141,12 +138,12 @@ export default {
     },
     okRow(data) {
       console.log('updatedata', data)
-      this.editId = ''
+      this.editId = '';
     },
     viewFaker(){
         this.$router.replace({name:"fakerTable"})
     }
-  }
+  },
 };
 </script>
 <style scoped>

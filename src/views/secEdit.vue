@@ -3,13 +3,13 @@
         <vue-good-table :columns="columns" :rows="rows"
         :select-options="{ enabled: true }"
         :search-options="{ enabled: true }"
-        :pagination-options="{ enabled:true, perPageDropdown: [5, 10, 15] }"
+        :pagination-options="{ enabled:true, perPageDropdown: [3,5, 10, 15] }"
         >
 
             <template slot="table-row" slot-scope="props">
                 <div v-if="props.column.field == 'btn'">
-                    <el-button size="mini" type="primary" props.row.id=editId @click="editRow(props.row.id)">Edit</el-button>
-                    <el-button size="mini" type="success"   @click="Save(props.row)">Save</el-button>     
+                    <el-button size="mini" type="success" v-if="props.row.id==editId"  @click="Save(props.row)">Save</el-button>     
+                    <el-button size="mini" type="primary" v-else @click="editRow(props.row.id)">Edit</el-button>
                 </div>
 
                 <div v-else>
@@ -59,20 +59,20 @@ export default {
                 {
                     label : 'Name',
                     field : 'name',
-                    width: '100px'
+                    width: '130px'
                 },
                 {
                     label : 'Date',
                     field : 'date',
                     custom: 'date',
                     type: Date,
-                    width: '100px'
+                    width: '120px'
                 },
                 {
                     label : 'Select',
                     field : 'select',
                     custom:'select',
-                    width: '100px'
+                    width: '480px'
                 }
             ],
             rows:[

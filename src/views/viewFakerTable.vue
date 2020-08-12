@@ -1,6 +1,6 @@
 <template>
     <div>
-         <vue-good-table :columns="columns" :rows="rows"
+        <vue-good-table :columns="columns" :rows="rows"
         :select-options="{ enabled: true }"
         :search-options="{ enabled: true }"
         :pagination-options="{ enabled:true, perPageDropdown: [5, 10, 15] }"
@@ -16,12 +16,15 @@
                         <el-date-picker v-model="props.row[props.column.field]" v-if="props.column.custom =='Date'" placeholder=""></el-date-picker>
                         <el-input v-else size="small" v-model="props.row[props.column.field]"></el-input>
                     </div>
-                    <div v-else>{{props.row[props.column.field]}}</div>
+                    <div v-else>
+                        <span>{{props.row[props.column.field]}}</span>
+                    </div>
                 </div>
             
             </template>
 
         </vue-good-table><br><br>
+        
         <el-button type="primary" @click="home()">GoToHomePage</el-button>
     </div>
 </template>
@@ -37,7 +40,7 @@ export default {
                 {
                     label:'Actions',
                     field: 'btn',
-                    width: '50px'
+                    width: '100px'
                 },
                 {
                     label: 'FirstName',
@@ -73,7 +76,7 @@ export default {
     },
     methods:{
        editRow(id){
-           this.editId= id;
+           this.editId = id;
        },
        Save(data){
            console.log(data);
@@ -81,20 +84,24 @@ export default {
        },
        home(){
            this.$router.replace({name:'EditableTable'})
-       }
+       },
+       getData(){
+           axios.get(baseUrl).then(res =>{
+                for(let i=0; i< res.data.length; i++){
+                    this.rows.push({
+                        FirstName: res.data[i].FirstName,
+                        LastName: res.data[i].LastName,
+                        City :res.data[i].City,
+                        Date: res.data[i].Date,
+                        Phone_no :res.data[i].Phone_no
+                    })
+                }
+            })
+        },
+        
     },
     created(){
-        axios.get(baseUrl).then(res =>{
-            for(let i=0; i< res.data.length; i++){
-                this.rows.push({
-                    FirstName: res.data[i].FirstName,
-                    LastName: res.data[i].LastName,
-                    City :res.data[i].City,
-                    Date: res.data[i].Date,
-                    Phone_no :res.data[i].Phone_no
-                })
-            }
-        })
+        this.getData();
     }
 }
 </script>
