@@ -74,19 +74,19 @@ export default {
         {
           label: 'action',
           field: 'btn',
-          width: '50px'
+          width: '10%'
         },
         {
           label: 'Name',
           field: 'name',
-          width: '100px'
+          width: '20%'
         },
         {
           label: 'Age',
           field: 'age',
           type: 'number',
-          width: '100px',
-          tdClass: this.tdClassFunc
+          width: '10%',
+          // tdClass: this.tdClassFunc
         },
         // {
         //   label: 'HTML',
@@ -99,12 +99,12 @@ export default {
           field: 'createdAt',
           type: Date,
           custom: 'date',
-          width: '250px'
+          width: '20%'
         },
         {
           label: 'Select',
           field: 'score',
-          custom: 'select'
+          custom: '30%'
         },
       ],
       rows: [

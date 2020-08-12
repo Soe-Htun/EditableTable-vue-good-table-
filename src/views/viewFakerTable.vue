@@ -40,7 +40,7 @@ export default {
                 {
                     label:'Actions',
                     field: 'btn',
-                    width: '100px'
+                    width: '120px'
                 },
                 {
                     label: 'FirstName',

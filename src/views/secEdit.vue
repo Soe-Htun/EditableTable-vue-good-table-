@@ -54,25 +54,25 @@ export default {
                 {
                     label: 'Action',
                     field: 'btn',
-                    width: '50px'
+                    width: '10%'
                 },
                 {
                     label : 'Name',
                     field : 'name',
-                    width: '130px'
+                    width: '20%'
                 },
                 {
                     label : 'Date',
                     field : 'date',
                     custom: 'date',
                     type: Date,
-                    width: '120px'
+                    width: '30%'
                 },
                 {
                     label : 'Select',
                     field : 'select',
                     custom:'select',
-                    width: '480px'
+                    width: '40%'
                 }
             ],
             rows:[
